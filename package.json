@@ -1,0 +1,52 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "lint-watch": "onchange \"**/*.ts\" \"**/*.js\" \"**/*.vue\" -- eslint --fix {{changed}}",
+    "stylelint-watch": "onchange \"**/*.css\" \"**/*.sass\" \"**/*.scss\" \"**/*.vue\" -- stylelint --fix {{changed}}"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.ts": "eslint --fix",
+    "*.vue": "eslint --fix"
+  },
+  "devDependencies": {
+    "@iconify/json": "^2.2.166",
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@nuxtjs/eslint-module": "^4.1.0",
+    "@sidebase/nuxt-auth": "^0.6.4",
+    "@stylistic/eslint-plugin": "^1.5.3",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/parser": "^6.18.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-vue": "^9.19.2",
+    "husky": "^8.0.3",
+    "nuxt": "3.11.2",
+    "onchange": "^7.1.0",
+    "stylelint": "^16.1.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "typescript": "^5.3.3",
+    "unplugin-icons": "^0.18.2",
+    "vue": "^3.4.6",
+    "vue-router": "^4.2.5",
+    "vuetify-nuxt-module": "^0.14.1"
+  },
+  "dependencies": {
+    "@auth/core": "^0.20.0",
+    "@mdi/font": "^7.4.47",
+    "@nuxt/content": "^2.10.0",
+    "@pinia/nuxt": "^0.5.1",
+    "next-auth": "4.22.5",
+    "pinia": "^2.1.7",
+    "sass": "^1.69.7",
+    "vee-validate": "^4.12.5",
+    "vuetify": "^3.4.9"
+  }
+}
