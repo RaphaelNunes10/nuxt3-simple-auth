@@ -1,6 +1,6 @@
 # Nuxt 3 Simple Auth Demo (WIP)
 
-Projeto pessoal em construção feito com Vue.js 3 e Nuxt 3, explorando os avanços da Composition API, stores beseadas em [Pinia](https://pinia.vuejs.org), autenticação padrão e oAuth utilizando [Sidebase Nuxt Auth](https://github.com/sidebase/nuxt-auth), [Vuetify](https://vuetifyjs.com) como bilbioteca de componentes para a interface visual e integração com [Supabase](https://supabase.com).
+Projeto pessoal em construção feito com Vue.js 3 e Nuxt 3, explorando os avanços da Composition API, stores baseadas em [Pinia](https://pinia.vuejs.org), autenticação padrão e oAuth utilizando [Sidebase Nuxt Auth](https://github.com/sidebase/nuxt-auth), [Vuetify](https://vuetifyjs.com) como biblioteca de componentes para a interface visual e integração com [Supabase](https://supabase.com).
 
 O projeto utiliza "$fetch" (mesmo "oFetch" para Nuxt) para chamadas API com gerenciamento de erros customizados, baseado no retorno da seguinte API feita com Laravel: https://github.com/RaphaelNunes10/laravel-simple-auth-api
 
