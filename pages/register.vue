@@ -171,6 +171,13 @@
             type="submit"
           >
             Finish
+            &nbsp;
+            <VProgressCircular
+              v-show="loading"
+              color="white"
+              size="x-small"
+              indeterminate
+            />
           </VBtn>
         </VCardActions>
       </VForm>
@@ -191,7 +198,7 @@ const icons = useIcons();
 const { signIn } = useAuth();
 
 const userStore = useMyUserStore();
-const { alert, alertMessage, alertType } = storeToRefs(userStore);
+const { alert, alertMessage, alertType, loading } = storeToRefs(userStore);
 
 const step = ref(1);
 
