@@ -11,9 +11,6 @@ export const useMyUserStore = defineStore({
 	id: "myUserStore",
 	state: () => ({ 
 		user: [] as UserData[],
-		alert: false as boolean,
-		alertMessage: "" as string,
-		alertType: undefined as "error" | "success" | "warning" | "info" | undefined,
 		loading: false as boolean
 	}),
 	actions: {
@@ -21,6 +18,7 @@ export const useMyUserStore = defineStore({
 		// },
 		async createUser(userData: UserData, password: string) {
 			const { passport } = useRuntimeConfig().public;
+			const { showAlert } = useAlert();
 		
 			if (!passport) {
 				console.error("Passport config is undefined. Check the environment variables.");
@@ -42,9 +40,8 @@ export const useMyUserStore = defineStore({
 					});
 
 				Object.assign(this.user, data);
-				this.alert = true;
-				this.alertMessage = "Success! Logging you in...";
-				this.alertType = "success";
+
+				showAlert("Success! Logging you in...", "success", 3000);
 
 				console.log(this.user);
 
@@ -55,19 +52,13 @@ export const useMyUserStore = defineStore({
 			}
 			catch(e) {
 				if (typeof e === "string") {
-					this.alert = true;
-					this.alertMessage = e;			
-					this.alertType = "error";
+					showAlert(e, "error");
 				} else {
-					this.alert = true;
-					this.alertMessage = "An unexpected error occurred. Contact support.";
-					this.alertType = "error";
-
+					showAlert("An unexpected error occurred. Contact support.", "error");
 					console.error(e);
 				}
 			}
 			finally {
-				setTimeout(() => { this.alert = false; }, 4000);
 				this.loading = false;
 			}
 		},

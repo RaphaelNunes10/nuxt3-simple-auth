@@ -102,7 +102,7 @@ definePageMeta({
 });
 
 const icons = useIcons();
-const rules = useFormRules();
+const { rules }  = useFormRules();
 const { signIn } = useAuth();
 
 const username = ref("");
@@ -115,7 +115,7 @@ async function Login (event: any) {
 	loading.value = false;
 
 	if(results?.valid == true) {
-		signIn("Passport", { username: username.value, password: password.value });
+		signIn("passport", { username: username.value, password: password.value });
 	}
 }
 </script>

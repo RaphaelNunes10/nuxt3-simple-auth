@@ -2,25 +2,6 @@
   <VContainer
     class="d-flex align-center justify-center flex-column"
   >
-    <VSnackbar
-      v-model="alert"
-      variant="text"
-      location="right top"
-      contained
-    >
-      <VAlert
-        :type="alertType"
-        :text="alertMessage"
-        variant="tonal"
-        closable
-        @click:close="alert = false"
-      />
-      <VProgressLinear
-        color="red"
-        indeterminate
-      />
-    </VSnackbar>
-
     <VCard
       class="mx-auto"
       width="400"
@@ -198,7 +179,7 @@ const icons = useIcons();
 const { signIn } = useAuth();
 
 const userStore = useMyUserStore();
-const { alert, alertMessage, alertType, loading } = storeToRefs(userStore);
+const { loading } = storeToRefs(userStore);
 
 const step = ref(1);
 

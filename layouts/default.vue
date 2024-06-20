@@ -6,6 +6,7 @@
         @click.stop="drawer = !drawer"
       />
       <VToolbarTitle>Simple Auth</VToolbarTitle>
+      {{ status }}
       <VBtn
         v-if="data?.user?.name"
         class="text-none px-3"
@@ -47,7 +48,25 @@
             subtitle="Vuetify"
           />
         </VNavigationDrawer>
-
+        
+        <VSnackbar
+          v-model="alert"
+          variant="text"
+          location="right top"
+          contained
+        >
+          <VAlert
+            :type="alertType"
+            :text="alertMessage"
+            variant="tonal"
+            closable
+            @click:close="alert = false"
+          />
+          <VProgressLinear
+            color="red"
+            indeterminate
+          />
+        </VSnackbar>
         <slot />
       </VLayout>
       <VFooter
@@ -64,7 +83,9 @@
 </template>
 
 <script lang="ts" setup>
-const { data } = useAuth();
+const { status, data } = useAuth();
+
+const { alert, alertMessage, alertType } = useAlert();
 
 const drawer = ref(false);
 const group = ref(null);

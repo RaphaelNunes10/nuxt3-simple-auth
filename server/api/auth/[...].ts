@@ -13,7 +13,7 @@ export default NuxtAuthHandler({
 	providers: [
 		{
 			id: "laravelpassport", //ID is only used for the callback URL
-			name: "Passport", // name is used for the login button
+			name: "passport", // name is used for the login button
 			type: "oauth", // connexion type
 			version: "2.0",// oauth version
 			authorization: {
@@ -28,7 +28,7 @@ export default NuxtAuthHandler({
 			clientId: passport.clientId, // the client Id
 			clientSecret: passport.clientSecret,// the client secret
 			userinfo: {
-				url: `${passport.baseUrl}/api/v1/me`,// this is a custom route that must return the current user that must be created in laravel
+				url: `${passport.baseUrl}/user`,// this is a custom route that must return the current user that must be created in laravel
 			},
 			profile: (profile: { id: any; username: any; email: any; image: any; }) => {
 				// map the session fields with you laravel fields
